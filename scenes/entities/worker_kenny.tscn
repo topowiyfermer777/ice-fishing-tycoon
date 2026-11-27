@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/entities/worker_ai.gd" id="1_si8qf"]
+[ext_resource type="Script" path="res://scripts/entities/character_rig.gd" id="2_rn7gq"]
+[ext_resource type="PackedScene" path="res://exports/glb/Characters/Worker_Kenny.glb" id="3_6cui4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rgtd2"]
+radius = 0.24
+height = 0.9
+
+[node name="WorkerKenny" type="CharacterBody3D" unique_id=1734434692]
+script = ExtResource("1_si8qf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1782879201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("CapsuleShape3D_rgtd2")
+
+[node name="KennyRig" type="Node3D" parent="." unique_id=1951547425]
+script = ExtResource("2_rn7gq")
+
+[node name="Model" type="Node3D" parent="KennyRig" unique_id=1123695035 instance=ExtResource("3_6cui4")]

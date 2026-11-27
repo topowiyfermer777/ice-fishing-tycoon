@@ -1,0 +1,471 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/camp_builder.gd" id="1_b25lb"]
+[ext_resource type="PackedScene" path="res://exports/glb/Environment/Log_Single_01.glb" id="2_amaji"]
+[ext_resource type="PackedScene" path="res://exports/glb/Environment/Log_Single_03.glb" id="3_oxxrb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mut6b"]
+albedo_color = Color(0.84, 0.63, 0.46, 1)
+roughness = 0.82
+
+[sub_resource type="BoxMesh" id="BoxMesh_5a4ej"]
+size = Vector3(6.8, 1.6, 8.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isi8v"]
+albedo_color = Color(0.55, 0.36, 0.24, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_i4kwh"]
+size = Vector3(0.22, 0.24, 8.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydu24"]
+albedo_color = Color(0.75, 0.56, 0.4, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_rj1il"]
+size = Vector3(1.05, 0.02, 1.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42wnb"]
+albedo_color = Color(0.92, 0.8, 0.64, 0.75)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_m0nml"]
+size = Vector3(1.1899999, 0.014, 1.1899999)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ms4b"]
+albedo_color = Color(0.75, 0.56, 0.4, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_fuvyy"]
+size = Vector3(1, 0.02, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yocl3"]
+albedo_color = Color(0.92, 0.8, 0.64, 0.75)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_grvhg"]
+size = Vector3(1.14, 0.014, 1.14)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gywam"]
+albedo_color = Color(0.75, 0.56, 0.4, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_u5djo"]
+size = Vector3(1, 0.02, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_262a4"]
+albedo_color = Color(0.92, 0.8, 0.64, 0.75)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_12v3w"]
+size = Vector3(1.14, 0.014, 1.14)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppjrk"]
+albedo_color = Color(0.72, 0.54, 0.38, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_folal"]
+size = Vector3(1.4, 0.02, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6pl0"]
+albedo_color = Color(0.92, 0.8, 0.64, 0.75)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_7bakl"]
+size = Vector3(1.54, 0.014, 1.54)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0u03"]
+albedo_color = Color(0.18, 0.14, 0.12, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_ltr10"]
+size = Vector3(1.15, 0.02, 0.72)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dced"]
+albedo_color = Color(0.18, 0.52, 0.25, 0.85)
+emission_enabled = true
+emission = Color(0.12, 0.4, 0.18, 1)
+emission_energy_multiplier = 0.4
+
+[sub_resource type="BoxMesh" id="BoxMesh_01l5p"]
+size = Vector3(1.29, 0.014, 0.86)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri12b"]
+albedo_color = Color(0.76, 0.44, 0.22, 1)
+roughness = 0.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_lwurv"]
+size = Vector3(2.4, 0.09, 0.55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3enw"]
+albedo_color = Color(0.54, 0.3, 0.15, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_xp5ot"]
+size = Vector3(0.12, 0.42, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8uohl"]
+size = Vector3(0.12, 0.42, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g5kwq"]
+size = Vector3(0.12, 0.42, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lup1t"]
+size = Vector3(0.12, 0.42, 0.12)
+
+[node name="Camp" type="Node3D" unique_id=56596049]
+script = ExtResource("1_b25lb")
+
+[node name="Deck" type="MeshInstance3D" parent="." unique_id=1642705958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, -0.8, 0)
+material_override = SubResource("StandardMaterial3D_mut6b")
+mesh = SubResource("BoxMesh_5a4ej")
+
+[node name="ShoreTrim" type="MeshInstance3D" parent="." unique_id=1759334858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, -0.09, 0)
+material_override = SubResource("StandardMaterial3D_isi8v")
+mesh = SubResource("BoxMesh_i4kwh")
+
+[node name="FloorPads" type="Node3D" parent="." unique_id=796517852]
+
+[node name="RawFishBase" type="MeshInstance3D" parent="FloorPads" unique_id=1303687571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.008, 1.8)
+material_override = SubResource("StandardMaterial3D_ydu24")
+mesh = SubResource("BoxMesh_rj1il")
+
+[node name="RawFishFrame" type="MeshInstance3D" parent="FloorPads" unique_id=86982398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.004, 1.8)
+material_override = SubResource("StandardMaterial3D_42wnb")
+mesh = SubResource("BoxMesh_m0nml")
+
+[node name="ChefInputBase" type="MeshInstance3D" parent="FloorPads" unique_id=1347233637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.008, 1.25)
+material_override = SubResource("StandardMaterial3D_4ms4b")
+mesh = SubResource("BoxMesh_fuvyy")
+
+[node name="ChefInputFrame" type="MeshInstance3D" parent="FloorPads" unique_id=683270527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.004, 1.25)
+material_override = SubResource("StandardMaterial3D_yocl3")
+mesh = SubResource("BoxMesh_grvhg")
+
+[node name="ChefOutputBase" type="MeshInstance3D" parent="FloorPads" unique_id=1478649901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.008, -1.2)
+material_override = SubResource("StandardMaterial3D_gywam")
+mesh = SubResource("BoxMesh_u5djo")
+
+[node name="ChefOutputFrame" type="MeshInstance3D" parent="FloorPads" unique_id=187060463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.004, -1.2)
+material_override = SubResource("StandardMaterial3D_262a4")
+mesh = SubResource("BoxMesh_12v3w")
+
+[node name="CashBase" type="MeshInstance3D" parent="FloorPads" unique_id=1033621587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0.008, -2.7)
+material_override = SubResource("StandardMaterial3D_ppjrk")
+mesh = SubResource("BoxMesh_folal")
+
+[node name="CashFrame" type="MeshInstance3D" parent="FloorPads" unique_id=1951091455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0.004, -2.7)
+material_override = SubResource("StandardMaterial3D_q6pl0")
+mesh = SubResource("BoxMesh_7bakl")
+
+[node name="ServeTriggerBase" type="MeshInstance3D" parent="FloorPads" unique_id=1902241845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0.008, -3.1)
+material_override = SubResource("StandardMaterial3D_n0u03")
+mesh = SubResource("BoxMesh_ltr10")
+
+[node name="ServeTriggerFrame" type="MeshInstance3D" parent="FloorPads" unique_id=1117866154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0.004, -3.1)
+material_override = SubResource("StandardMaterial3D_4dced")
+mesh = SubResource("BoxMesh_01l5p")
+
+[node name="ServingCounter" type="Node3D" parent="." unique_id=1150747856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, -3.9)
+
+[node name="Top" type="MeshInstance3D" parent="ServingCounter" unique_id=248367295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0)
+material_override = SubResource("StandardMaterial3D_ri12b")
+mesh = SubResource("BoxMesh_lwurv")
+
+[node name="Leg_0" type="MeshInstance3D" parent="ServingCounter" unique_id=223494754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.21, -0.18)
+material_override = SubResource("StandardMaterial3D_c3enw")
+mesh = SubResource("BoxMesh_xp5ot")
+
+[node name="Leg_1" type="MeshInstance3D" parent="ServingCounter" unique_id=762212950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.21, 0.18)
+material_override = SubResource("StandardMaterial3D_c3enw")
+mesh = SubResource("BoxMesh_8uohl")
+
+[node name="Leg_2" type="MeshInstance3D" parent="ServingCounter" unique_id=893570506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.21, -0.18)
+material_override = SubResource("StandardMaterial3D_c3enw")
+mesh = SubResource("BoxMesh_g5kwq")
+
+[node name="Leg_3" type="MeshInstance3D" parent="ServingCounter" unique_id=1249934167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.21, 0.18)
+material_override = SubResource("StandardMaterial3D_c3enw")
+mesh = SubResource("BoxMesh_lup1t")
+
+[node name="FenceStatic" type="Node3D" parent="." unique_id=1202696736]
+
+[node name="SouthLog_00" type="Node3D" parent="FenceStatic" unique_id=326175253 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0, 4.15)
+
+[node name="SouthLog_01" type="Node3D" parent="FenceStatic" unique_id=1805301614 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 0.41962963, 0, 4.15)
+
+[node name="SouthLog_02" type="Node3D" parent="FenceStatic" unique_id=1355044973 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 0.6592593, 0, 4.15)
+
+[node name="SouthLog_03" type="Node3D" parent="FenceStatic" unique_id=1583255936 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 0.89888895, 0, 4.15)
+
+[node name="SouthLog_04" type="Node3D" parent="FenceStatic" unique_id=1098276988 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1385186, 0, 4.15)
+
+[node name="SouthLog_05" type="Node3D" parent="FenceStatic" unique_id=121238366 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 1.3781481, 0, 4.15)
+
+[node name="SouthLog_06" type="Node3D" parent="FenceStatic" unique_id=1249983610 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 1.6177778, 0, 4.15)
+
+[node name="SouthLog_07" type="Node3D" parent="FenceStatic" unique_id=138372538 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 1.8574073, 0, 4.15)
+
+[node name="SouthLog_08" type="Node3D" parent="FenceStatic" unique_id=1873853327 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.097037, 0, 4.15)
+
+[node name="SouthLog_09" type="Node3D" parent="FenceStatic" unique_id=1481765820 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 2.3366668, 0, 4.15)
+
+[node name="SouthLog_10" type="Node3D" parent="FenceStatic" unique_id=2094745732 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 2.5762963, 0, 4.15)
+
+[node name="SouthLog_11" type="Node3D" parent="FenceStatic" unique_id=813189635 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 2.815926, 0, 4.15)
+
+[node name="SouthLog_12" type="Node3D" parent="FenceStatic" unique_id=1723436236 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0555558, 0, 4.15)
+
+[node name="SouthLog_13" type="Node3D" parent="FenceStatic" unique_id=141331388 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 3.2951856, 0, 4.15)
+
+[node name="SouthLog_14" type="Node3D" parent="FenceStatic" unique_id=261570035 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 3.5348148, 0, 4.15)
+
+[node name="SouthLog_15" type="Node3D" parent="FenceStatic" unique_id=1737783877 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 3.7744448, 0, 4.15)
+
+[node name="SouthLog_16" type="Node3D" parent="FenceStatic" unique_id=1001850230 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0140743, 0, 4.15)
+
+[node name="SouthLog_17" type="Node3D" parent="FenceStatic" unique_id=86325834 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 4.2537036, 0, 4.15)
+
+[node name="SouthLog_18" type="Node3D" parent="FenceStatic" unique_id=915607639 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 4.4933333, 0, 4.15)
+
+[node name="SouthLog_19" type="Node3D" parent="FenceStatic" unique_id=1963634057 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 4.732963, 0, 4.15)
+
+[node name="SouthLog_20" type="Node3D" parent="FenceStatic" unique_id=1758148640 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9725924, 0, 4.15)
+
+[node name="SouthLog_21" type="Node3D" parent="FenceStatic" unique_id=1503170494 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 5.2122226, 0, 4.15)
+
+[node name="SouthLog_22" type="Node3D" parent="FenceStatic" unique_id=1462359683 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 5.451852, 0, 4.15)
+
+[node name="SouthLog_23" type="Node3D" parent="FenceStatic" unique_id=906069049 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 5.6914816, 0, 4.15)
+
+[node name="SouthLog_24" type="Node3D" parent="FenceStatic" unique_id=1304111854 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9311113, 0, 4.15)
+
+[node name="SouthLog_25" type="Node3D" parent="FenceStatic" unique_id=219704044 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.1707406, 0, 4.15)
+
+[node name="SouthLog_26" type="Node3D" parent="FenceStatic" unique_id=2043936899 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.410371, 0, 4.15)
+
+[node name="SouthLog_27" type="Node3D" parent="FenceStatic" unique_id=2086980045 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, 4.15)
+
+[node name="NorthWLog_00" type="Node3D" parent="FenceStatic" unique_id=1204442249 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0, -4.15)
+
+[node name="NorthWLog_01" type="Node3D" parent="FenceStatic" unique_id=1226085656 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 0.43222222, 0, -4.15)
+
+[node name="NorthWLog_02" type="Node3D" parent="FenceStatic" unique_id=1464076528 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 0.6844444, 0, -4.15)
+
+[node name="NorthWLog_03" type="Node3D" parent="FenceStatic" unique_id=1230800152 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 0.93666667, 0, -4.15)
+
+[node name="NorthWLog_04" type="Node3D" parent="FenceStatic" unique_id=1099722916 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1888888, 0, -4.15)
+
+[node name="NorthWLog_05" type="Node3D" parent="FenceStatic" unique_id=1100334219 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 1.4411111, 0, -4.15)
+
+[node name="NorthWLog_06" type="Node3D" parent="FenceStatic" unique_id=398676103 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 1.6933334, 0, -4.15)
+
+[node name="NorthWLog_07" type="Node3D" parent="FenceStatic" unique_id=806239934 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 1.9455557, 0, -4.15)
+
+[node name="NorthWLog_08" type="Node3D" parent="FenceStatic" unique_id=587685609 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1977777, 0, -4.15)
+
+[node name="NorthWLog_09" type="Node3D" parent="FenceStatic" unique_id=688136464 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 2.45, 0, -4.15)
+
+[node name="NorthELog_00" type="Node3D" parent="FenceStatic" unique_id=1709027997 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15, 0, -4.15)
+
+[node name="NorthELog_01" type="Node3D" parent="FenceStatic" unique_id=1037889323 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 5.4, 0, -4.15)
+
+[node name="NorthELog_02" type="Node3D" parent="FenceStatic" unique_id=1158625980 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 5.65, 0, -4.15)
+
+[node name="NorthELog_03" type="Node3D" parent="FenceStatic" unique_id=847874282 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 5.9, 0, -4.15)
+
+[node name="NorthELog_04" type="Node3D" parent="FenceStatic" unique_id=120275590 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15, 0, -4.15)
+
+[node name="NorthELog_05" type="Node3D" parent="FenceStatic" unique_id=1688540156 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.4, 0, -4.15)
+
+[node name="NorthELog_06" type="Node3D" parent="FenceStatic" unique_id=782516120 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, -4.15)
+
+[node name="ExpandableFenceEast" type="Node3D" parent="." unique_id=1322894347]
+
+[node name="EastLog_00" type="Node3D" parent="ExpandableFenceEast" unique_id=1207246647 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, -3.91)
+
+[node name="EastLog_01" type="Node3D" parent="ExpandableFenceEast" unique_id=180695344 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, -3.6730304)
+
+[node name="EastLog_02" type="Node3D" parent="ExpandableFenceEast" unique_id=1405007957 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, -3.4360607)
+
+[node name="EastLog_03" type="Node3D" parent="ExpandableFenceEast" unique_id=763887722 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, -3.199091)
+
+[node name="EastLog_04" type="Node3D" parent="ExpandableFenceEast" unique_id=1581009228 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, -2.9621212)
+
+[node name="EastLog_05" type="Node3D" parent="ExpandableFenceEast" unique_id=1876212114 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, -2.7251515)
+
+[node name="EastLog_06" type="Node3D" parent="ExpandableFenceEast" unique_id=665883616 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, -2.4881818)
+
+[node name="EastLog_07" type="Node3D" parent="ExpandableFenceEast" unique_id=211343112 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, -2.2512121)
+
+[node name="EastLog_08" type="Node3D" parent="ExpandableFenceEast" unique_id=485836495 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, -2.0142424)
+
+[node name="EastLog_09" type="Node3D" parent="ExpandableFenceEast" unique_id=26266082 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, -1.7772727)
+
+[node name="EastLog_10" type="Node3D" parent="ExpandableFenceEast" unique_id=941091926 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, -1.540303)
+
+[node name="EastLog_11" type="Node3D" parent="ExpandableFenceEast" unique_id=1701718723 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, -1.3033333)
+
+[node name="EastLog_12" type="Node3D" parent="ExpandableFenceEast" unique_id=749764223 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, -1.0663636)
+
+[node name="EastLog_13" type="Node3D" parent="ExpandableFenceEast" unique_id=1961069927 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, -0.82939386)
+
+[node name="EastLog_14" type="Node3D" parent="ExpandableFenceEast" unique_id=1452751393 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, -0.59242415)
+
+[node name="EastLog_15" type="Node3D" parent="ExpandableFenceEast" unique_id=999907790 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, -0.35545444)
+
+[node name="EastLog_16" type="Node3D" parent="ExpandableFenceEast" unique_id=283477535 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, -0.118484735)
+
+[node name="EastLog_17" type="Node3D" parent="ExpandableFenceEast" unique_id=1681869017 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, 0.118484735)
+
+[node name="EastLog_18" type="Node3D" parent="ExpandableFenceEast" unique_id=766814629 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, 0.35545468)
+
+[node name="EastLog_19" type="Node3D" parent="ExpandableFenceEast" unique_id=1103955998 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, 0.59242415)
+
+[node name="EastLog_20" type="Node3D" parent="ExpandableFenceEast" unique_id=229121500 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, 0.8293941)
+
+[node name="EastLog_21" type="Node3D" parent="ExpandableFenceEast" unique_id=1034254101 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, 1.0663636)
+
+[node name="EastLog_22" type="Node3D" parent="ExpandableFenceEast" unique_id=1264536559 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, 1.3033335)
+
+[node name="EastLog_23" type="Node3D" parent="ExpandableFenceEast" unique_id=401514997 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, 1.540303)
+
+[node name="EastLog_24" type="Node3D" parent="ExpandableFenceEast" unique_id=7893043 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, 1.7772729)
+
+[node name="EastLog_25" type="Node3D" parent="ExpandableFenceEast" unique_id=1463351377 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, 2.0142424)
+
+[node name="EastLog_26" type="Node3D" parent="ExpandableFenceEast" unique_id=1785962490 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, 2.2512124)
+
+[node name="EastLog_27" type="Node3D" parent="ExpandableFenceEast" unique_id=569391532 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, 2.4881818)
+
+[node name="EastLog_28" type="Node3D" parent="ExpandableFenceEast" unique_id=1437794470 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, 2.7251518)
+
+[node name="EastLog_29" type="Node3D" parent="ExpandableFenceEast" unique_id=1795481112 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, 2.9621212)
+
+[node name="EastLog_30" type="Node3D" parent="ExpandableFenceEast" unique_id=691115659 instance=ExtResource("2_amaji")]
+transform = Transform3D(-0.99999875, 0, 0.001592548, 0, 1, 0, -0.001592548, 0, -0.99999875, 6.65, 0, 3.1990912)
+
+[node name="EastLog_31" type="Node3D" parent="ExpandableFenceEast" unique_id=1758839307 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(-0.00238894, 0, -0.99999714, 0, 1, 0, 0.99999714, 0, -0.00238894, 6.65, 0, 3.4360607)
+
+[node name="EastLog_32" type="Node3D" parent="ExpandableFenceEast" unique_id=839568688 instance=ExtResource("2_amaji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65, 0, 3.6730306)
+
+[node name="EastLog_33" type="Node3D" parent="ExpandableFenceEast" unique_id=532294738 instance=ExtResource("3_oxxrb")]
+transform = Transform3D(0.0007962743, 0, 0.9999997, 0, 1, 0, -0.9999997, 0, 0.0007962743, 6.65, 0, 3.91)
+
+[node name="Zones" type="Node3D" parent="." unique_id=318302314]
+
+[node name="RawFishPad" type="Marker3D" parent="Zones" unique_id=1253669706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0, 1.8)
+
+[node name="ChefInputPad" type="Marker3D" parent="Zones" unique_id=151434420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 1.25)
+
+[node name="ChefOutputPad" type="Marker3D" parent="Zones" unique_id=2048395199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, -1.2)
+
+[node name="ServeTriggerZone" type="Marker3D" parent="Zones" unique_id=858464437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 0, -3.1)
+
+[node name="CashZone" type="Marker3D" parent="Zones" unique_id=2041792374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -2.7)
+
+[node name="HeroSpawn" type="Marker3D" parent="Zones" unique_id=970990374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0.5)
+
+[node name="WorkerSpawn" type="Marker3D" parent="Zones" unique_id=239705169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, -1.35)

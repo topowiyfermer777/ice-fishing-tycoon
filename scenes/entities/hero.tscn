@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_s30xn"]
+[ext_resource type="Script" path="res://scripts/entities/character_rig.gd" id="2_0skjh"]
+[ext_resource type="PackedScene" path="res://exports/glb/Characters/Hero.glb" id="3_w4nsd"]
+[ext_resource type="Script" path="res://scripts/player/stack_carry.gd" id="4_lp321"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lvi3u"]
+radius = 0.25
+height = 0.9
+
+[node name="Hero" type="CharacterBody3D" unique_id=1584635290]
+script = ExtResource("1_s30xn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1889282748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("CapsuleShape3D_lvi3u")
+
+[node name="HeroRig" type="Node3D" parent="." unique_id=875181450]
+script = ExtResource("2_0skjh")
+
+[node name="Model" type="Node3D" parent="HeroRig" unique_id=2063035258 instance=ExtResource("3_w4nsd")]
+
+[node name="StackCarry" type="Node3D" parent="HeroRig" unique_id=772860261]
+script = ExtResource("4_lp321")

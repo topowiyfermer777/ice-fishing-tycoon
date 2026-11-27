@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/systems/upgrade_pad.gd" id="1_txr15"]
+
+[node name="UpgradePad" type="Node3D" unique_id=2088304127]
+script = ExtResource("1_txr15")
+
+[node name="PriceLabel" type="Label3D" parent="." unique_id=1031359391]
+transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0.62, 0.044, 0)
+pixel_size = 0.0044
+shaded = false
+alpha_cut = 0
+render_priority = 6
+modulate = Color(1, 1, 1, 1)
+outline_modulate = Color(0.08, 0.12, 0.18, 1)
+text = "$100"
+font_size = 82
+outline_size = 22

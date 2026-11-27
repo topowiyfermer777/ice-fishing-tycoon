@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://skqftc3rn1kg"]
+
+[ext_resource type="Script" uid="uid://bg1dj3goupqfl" path="res://scripts/main.gd" id="1_2wyq8"]
+[ext_resource type="Script" uid="uid://kvsfrhpqhxfs" path="res://scripts/player/camera_rig.gd" id="2_vxglm"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_2f3dj"]
+[ext_resource type="Script" uid="uid://cg77fvd5o2hbw" path="res://scripts/vfx/vfx_manager.gd" id="5_fv21b"]
+[ext_resource type="PackedScene" path="res://scenes/world/environment.tscn" id="6_tel4y"]
+[ext_resource type="PackedScene" path="res://scenes/world/river.tscn" id="8_5q0nq"]
+[ext_resource type="PackedScene" path="res://scenes/world/camp.tscn" id="10_j8jky"]
+[ext_resource type="Script" uid="uid://d2e16t5d3js7v" path="res://scripts/systems/cash_zone.gd" id="12_fuf3a"]
+[ext_resource type="Script" uid="uid://bkw1v3hydqn5j" path="res://scripts/systems/customer_queue_system.gd" id="13_pibwh"]
+[ext_resource type="PackedScene" path="res://scenes/entities/chef_station.tscn" id="14_c6pm6"]
+[ext_resource type="Script" uid="uid://tcodjtn25ori" path="res://scripts/systems/conveyor_system.gd" id="16_5poiv"]
+[ext_resource type="PackedScene" uid="uid://cowu3bt74e45s" path="res://exports/glb/Stations_And_UI/Conveyor_Straight.glb" id="17_2cjbq"]
+[ext_resource type="PackedScene" uid="uid://dyg5rgxetbyx7" path="res://exports/glb/Stations_And_UI/Conveyor_Turn.glb" id="18_chjal"]
+[ext_resource type="Script" uid="uid://yhmxueihyrnq" path="res://scripts/systems/river_ice_system.gd" id="19_cjqg0"]
+[ext_resource type="PackedScene" path="res://scenes/entities/hero.tscn" id="20_vchkt"]
+[ext_resource type="PackedScene" path="res://scenes/entities/upgrade_pad.tscn" id="22_vc5cj"]
+[ext_resource type="PackedScene" uid="uid://slfb3sdc0ud4" path="res://exports/glb/Stations_And_UI/Icon_Pad_LogDam.glb" id="24_ty1g6"]
+[ext_resource type="PackedScene" uid="uid://cif4l44jrhgdg" path="res://exports/glb/Stations_And_UI/Icon_Pad_Conveyor.glb" id="25_j2jfr"]
+[ext_resource type="PackedScene" uid="uid://fk3jcbuxe6iv" path="res://exports/glb/Stations_And_UI/Icon_Pad_AddWorker.glb" id="26_bjg73"]
+[ext_resource type="PackedScene" path="res://scenes/ui/main_menu.tscn" id="27_menu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bu4jf"]
+sky_top_color = Color(0.45, 0.72, 0.96, 1)
+sky_horizon_color = Color(0.84, 0.93, 1, 1)
+ground_bottom_color = Color(0.75, 0.85, 0.95, 1)
+ground_horizon_color = Color(0.84, 0.93, 1, 1)
+
+[sub_resource type="Sky" id="Sky_o7ddy"]
+sky_material = SubResource("ProceduralSkyMaterial_bu4jf")
+
+[sub_resource type="Environment" id="Environment_0loja"]
+background_mode = 2
+sky = SubResource("Sky_o7ddy")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.46
+tonemap_mode = 3
+tonemap_exposure = 0.86
+
+[node name="Main" type="Node3D" unique_id=169938224]
+script = ExtResource("1_2wyq8")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1392996652]
+environment = SubResource("Environment_0loja")
+
+[node name="SunLight" type="DirectionalLight3D" parent="." unique_id=409441729]
+transform = Transform3D(0.8480481, -0.41758206, 0.32625088, 0, 0.6156615, 0.7880107, -0.52991927, -0.668271, 0.5221106, 6, 14, 6)
+light_color = Color(1, 0.968627, 0.917647, 1)
+light_energy = 1.12
+shadow_enabled = true
+shadow_bias = 0.03
+shadow_normal_bias = 1.2
+directional_shadow_mode = 1
+directional_shadow_max_distance = 34.0
+
+[node name="CameraRig" type="Camera3D" parent="." unique_id=16130542]
+fov = 34.0
+script = ExtResource("2_vxglm")
+
+[node name="HUD" parent="." unique_id=1686358508 instance=ExtResource("3_2f3dj")]
+
+[node name="MainMenu" parent="." instance=ExtResource("27_menu")]
+
+[node name="VfxManager" type="Node3D" parent="." unique_id=1295129024]
+script = ExtResource("5_fv21b")
+
+[node name="Environment" parent="." unique_id=1289903265 instance=ExtResource("6_tel4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049432278, -0.01538372, 0.009523392)
+
+[node name="River" parent="." unique_id=719308693 instance=ExtResource("8_5q0nq")]
+
+[node name="Camp" parent="." unique_id=56596049 instance=ExtResource("10_j8jky")]
+
+[node name="CashZone" type="Node3D" parent="." unique_id=1267134281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -2.7)
+script = ExtResource("12_fuf3a")
+
+[node name="CustomerQueueSystem" type="Node3D" parent="." unique_id=994410354]
+script = ExtResource("13_pibwh")
+
+[node name="LaneStarts" type="Node3D" parent="CustomerQueueSystem" unique_id=688238518]
+
+[node name="Lane_0" type="Marker3D" parent="CustomerQueueSystem/LaneStarts" unique_id=1227728169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95, -0.04, -4.55)
+
+[node name="Lane_1" type="Marker3D" parent="CustomerQueueSystem/LaneStarts" unique_id=1647495189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, -0.04, -4.55)
+
+[node name="Lane_2" type="Marker3D" parent="CustomerQueueSystem/LaneStarts" unique_id=1660893464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, -0.04, -4.55)
+
+[node name="ChefStation" parent="." unique_id=1268156051 instance=ExtResource("14_c6pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 0.1)
+
+[node name="ConveyorSystem" type="Node3D" parent="." unique_id=1855021349]
+script = ExtResource("16_5poiv")
+
+[node name="ConveyorVisuals" type="Node3D" parent="ConveyorSystem" unique_id=1887594902]
+
+[node name="In_01" parent="ConveyorSystem/ConveyorVisuals" unique_id=1470838754 instance=ExtResource("17_2cjbq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3639475, 0, 2.4611847)
+
+[node name="In_02" parent="ConveyorSystem/ConveyorVisuals" unique_id=1978001111 instance=ExtResource("17_2cjbq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3374653, 0, 2.4642515)
+
+[node name="In_Turn" parent="ConveyorSystem/ConveyorVisuals" unique_id=2130173267 instance=ExtResource("18_chjal")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8463516, 0, 2.4660096)
+
+[node name="Out_01" parent="ConveyorSystem/ConveyorVisuals" unique_id=2144235447 instance=ExtResource("17_2cjbq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.2, 0, -0.85)
+
+[node name="Out_02" parent="ConveyorSystem/ConveyorVisuals" unique_id=321203558 instance=ExtResource("17_2cjbq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.2, 0, -1.85)
+
+[node name="Out_03" parent="ConveyorSystem/ConveyorVisuals" unique_id=383669944 instance=ExtResource("17_2cjbq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.2, 0, -2.85)
+
+[node name="InputWaypoints" type="Node3D" parent="ConveyorSystem" unique_id=123269465]
+
+[node name="WP_0" type="Marker3D" parent="ConveyorSystem/InputWaypoints" unique_id=1112900177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 0.285, 2.46)
+
+[node name="WP_1" type="Marker3D" parent="ConveyorSystem/InputWaypoints" unique_id=1915361203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85, 0.285, 2.46)
+
+[node name="WP_2" type="Marker3D" parent="ConveyorSystem/InputWaypoints" unique_id=648183394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15, 0.285, 2.36)
+
+[node name="WP_3" type="Marker3D" parent="ConveyorSystem/InputWaypoints" unique_id=1942211087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.285, 2.11)
+
+[node name="OutputWaypoints" type="Node3D" parent="ConveyorSystem" unique_id=489255372]
+
+[node name="WP_0" type="Marker3D" parent="ConveyorSystem/OutputWaypoints" unique_id=1931409037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.285, -0.52)
+
+[node name="WP_1" type="Marker3D" parent="ConveyorSystem/OutputWaypoints" unique_id=1359153654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0.285, -3.52)
+
+[node name="RiverIceSystem" type="Node3D" parent="." unique_id=588649612]
+script = ExtResource("19_cjqg0")
+initial_block_zs = PackedFloat32Array(-0.4, -2.5, -5.2, -7.8)
+
+[node name="Hero" parent="." unique_id=1584635290 instance=ExtResource("20_vchkt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0.5)
+
+[node name="Workers" type="Node3D" parent="." unique_id=894121123]
+
+[node name="UpgradePads" type="Node3D" parent="." unique_id=244845606]
+
+[node name="LogDamPad" parent="UpgradePads" unique_id=2088304127 instance=ExtResource("22_vc5cj")]
+transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 0.95, 0, 3.25)
+pad_id = "log_dam"
+pad_scene = ExtResource("24_ty1g6")
+
+[node name="PadModel" parent="UpgradePads/LogDamPad" unique_id=1689979265 instance=ExtResource("24_ty1g6")]
+
+[node name="ConveyorPad" parent="UpgradePads" unique_id=2100838362 instance=ExtResource("22_vc5cj")]
+transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 0.95, 0, 3.25)
+pad_id = "conveyor"
+cost = 200
+start_active = false
+pad_scene = ExtResource("25_j2jfr")
+
+[node name="PadModel" parent="UpgradePads/ConveyorPad" unique_id=398073458 instance=ExtResource("25_j2jfr")]
+
+[node name="AddWorkerPad" parent="UpgradePads" unique_id=1465380624 instance=ExtResource("22_vc5cj")]
+transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 0.95, 0, -1.75)
+pad_id = "add_worker"
+cost = 200
+pad_scene = ExtResource("26_bjg73")
+
+[node name="PadModel" parent="UpgradePads/AddWorkerPad" unique_id=1836284429 instance=ExtResource("26_bjg73")]

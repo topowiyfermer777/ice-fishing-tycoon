@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/systems/chef_station.gd" id="1_kh1ge"]
+[ext_resource type="PackedScene" path="res://exports/glb/Stations_And_UI/ChefTable.glb" id="2_s8ksl"]
+[ext_resource type="Script" path="res://scripts/entities/character_rig.gd" id="3_wpdg3"]
+[ext_resource type="PackedScene" path="res://exports/glb/Characters/Chef.glb" id="4_4u2u7"]
+
+[node name="ChefStation" type="Node3D" unique_id=1268156051]
+script = ExtResource("1_kh1ge")
+
+[node name="ChefTable" type="Node3D" parent="." unique_id=1684369350 instance=ExtResource("2_s8ksl")]
+transform = Transform3D(-5.1579438e-08, 0, 1.18, 0, 1.05, 0, -1.18, 0, -5.1579438e-08, 0, 0, 0)
+
+[node name="ChefRig" type="Node3D" parent="." unique_id=1765586939]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.72, 0, 0)
+script = ExtResource("3_wpdg3")
+
+[node name="Model" type="Node3D" parent="ChefRig" unique_id=2137584809 instance=ExtResource("4_4u2u7")]
+
+[node name="BoardFishPoint" type="Marker3D" parent="." unique_id=1968214797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, 0)

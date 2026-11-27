@@ -1,0 +1,127 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/river_builder.gd" id="1_brsua"]
+[ext_resource type="Shader" path="res://shaders/river_water.gdshader" id="2_own4b"]
+[ext_resource type="Shader" path="res://shaders/waterfall.gdshader" id="3_x457n"]
+[ext_resource type="PackedScene" path="res://exports/glb/Environment/Log_Single_01.glb" id="4_nhws1"]
+[ext_resource type="PackedScene" path="res://exports/glb/Environment/Log_Single_02.glb" id="5_id2qn"]
+[ext_resource type="PackedScene" path="res://exports/glb/Environment/Log_Single_03.glb" id="6_6doa4"]
+[ext_resource type="PackedScene" path="res://exports/glb/Environment/Log_Single_04.glb" id="7_7sb18"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdptk"]
+render_priority = 0
+shader = ExtResource("2_own4b")
+shader_parameter/deep_color = null
+shader_parameter/shallow_color = null
+shader_parameter/foam_color = null
+shader_parameter/flow_speed = null
+shader_parameter/river_half_width = null
+shader_parameter/river_center_x = null
+shader_parameter/dam_z = 3.95
+shader_parameter/dam_built = 0.0
+shader_parameter/cliff_z = 4.4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nkpjt"]
+size = Vector2(3.95, 19.6)
+subdivide_width = 8
+subdivide_depth = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1a6vy"]
+render_priority = 0
+shader = ExtResource("3_x457n")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_evgsy"]
+size = Vector2(3.96, 2.62)
+subdivide_width = 10
+subdivide_depth = 16
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_source_cascade"]
+size = Vector2(3.75, 1.82)
+subdivide_width = 8
+subdivide_depth = 14
+orientation = 2
+
+[node name="River" type="Node3D" unique_id=719308693]
+script = ExtResource("1_brsua")
+
+[node name="RiverSurface" type="MeshInstance3D" parent="." unique_id=1687909226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95, -0.18, -5.4)
+material_override = SubResource("ShaderMaterial_xdptk")
+mesh = SubResource("PlaneMesh_nkpjt")
+
+[node name="WaterfallCurtain" type="MeshInstance3D" parent="." unique_id=398585715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95, -1.45, 4.38)
+cast_shadow = 0
+material_override = SubResource("ShaderMaterial_1a6vy")
+mesh = SubResource("PlaneMesh_evgsy")
+
+[node name="SourceCascade" type="MeshInstance3D" parent="." unique_id=156000001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95, 0.68, -15.05)
+cast_shadow = 0
+material_override = SubResource("ShaderMaterial_1a6vy")
+mesh = SubResource("PlaneMesh_source_cascade")
+
+[node name="Markers" type="Node3D" parent="." unique_id=1211012094]
+
+[node name="SpawnLineStart" type="Marker3D" parent="Markers" unique_id=672917671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95, -0.18, -13.9)
+
+[node name="SpawnLineEnd" type="Marker3D" parent="Markers" unique_id=527047643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.18, -13.9)
+
+[node name="DamLineStart" type="Marker3D" parent="Markers" unique_id=683635049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72, -0.43, 3.95)
+
+[node name="DamLineEnd" type="Marker3D" parent="Markers" unique_id=1694000977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.43, 3.95)
+
+[node name="CliffEdgeMarker" type="Marker3D" parent="Markers" unique_id=769049505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95, -0.18, 4.4)
+
+[node name="LogDamContainer" type="Node3D" parent="." unique_id=305514714]
+
+[node name="DamLog_00" type="Node3D" parent="LogDamContainer" unique_id=326175253 instance=ExtResource("4_nhws1")]
+transform = Transform3D(1.043126, 0, -0.119950935, 0, 1.05, 0, 0.119950935, 0, 1.043126, -3.72, -0.43, 3.95)
+
+[node name="DamLog_01" type="Node3D" parent="LogDamContainer" unique_id=281945720 instance=ExtResource("5_id2qn")]
+transform = Transform3D(1.0488051, 0, 0.050076198, 0, 1.05, 0, -0.050076198, 0, 1.0488051, -3.47, -0.43, 3.95)
+
+[node name="DamLog_02" type="Node3D" parent="LogDamContainer" unique_id=1805301614 instance=ExtResource("6_6doa4")]
+transform = Transform3D(1.0480762, 0, -0.06353233, 0, 1.05, 0, 0.06353233, 0, 1.0480762, -3.22, -0.43, 3.95)
+
+[node name="DamLog_03" type="Node3D" parent="LogDamContainer" unique_id=515973183 instance=ExtResource("7_7sb18")]
+transform = Transform3D(1.0399133, 0, -0.14519033, 0, 1.05, 0, 0.14519033, 0, 1.0399133, -2.97, -0.43, 3.95)
+
+[node name="DamLog_04" type="Node3D" parent="LogDamContainer" unique_id=1296488800 instance=ExtResource("4_nhws1")]
+transform = Transform3D(1.0468098, 0, 0.08178762, 0, 1.05, 0, -0.08178762, 0, 1.0468098, -2.72, -0.43, 3.95)
+
+[node name="DamLog_05" type="Node3D" parent="LogDamContainer" unique_id=48070541 instance=ExtResource("5_id2qn")]
+transform = Transform3D(1.0445471, 0, -0.10687068, 0, 1.05, 0, 0.10687068, 0, 1.0445471, -2.47, -0.43, 3.95)
+
+[node name="DamLog_06" type="Node3D" parent="LogDamContainer" unique_id=340846929 instance=ExtResource("6_6doa4")]
+transform = Transform3D(1.040976, 0, 0.13736355, 0, 1.05, 0, -0.13736355, 0, 1.040976, -2.22, -0.43, 3.95)
+
+[node name="DamLog_07" type="Node3D" parent="LogDamContainer" unique_id=1204347819 instance=ExtResource("7_7sb18")]
+transform = Transform3D(1.0424985, 0, -0.12528723, 0, 1.05, 0, 0.12528723, 0, 1.0424985, -1.97, -0.43, 3.95)
+
+[node name="DamLog_08" type="Node3D" parent="LogDamContainer" unique_id=2132301344 instance=ExtResource("4_nhws1")]
+transform = Transform3D(1.0451306, 0, -0.10100391, 0, 1.05, 0, 0.10100391, 0, 1.0451306, -1.72, -0.43, 3.95)
+
+[node name="DamLog_09" type="Node3D" parent="LogDamContainer" unique_id=1455282025 instance=ExtResource("5_id2qn")]
+transform = Transform3D(1.0396484, 0, 0.14707516, 0, 1.05, 0, -0.14707516, 0, 1.0396484, -1.47, -0.43, 3.95)
+
+[node name="DamLog_10" type="Node3D" parent="LogDamContainer" unique_id=1114281219 instance=ExtResource("6_6doa4")]
+transform = Transform3D(1.0408369, 0, -0.13841395, 0, 1.05, 0, 0.13841395, 0, 1.0408369, -1.22, -0.43, 3.95)
+
+[node name="DamLog_11" type="Node3D" parent="LogDamContainer" unique_id=1270910948 instance=ExtResource("7_7sb18")]
+transform = Transform3D(1.040757, 0, -0.13901378, 0, 1.05, 0, 0.13901378, 0, 1.040757, -0.97, -0.43, 3.95)
+
+[node name="DamLog_12" type="Node3D" parent="LogDamContainer" unique_id=1365144502 instance=ExtResource("4_nhws1")]
+transform = Transform3D(1.0388541, 0, -0.15258414, 0, 1.05, 0, 0.15258414, 0, 1.0388541, -0.72, -0.43, 3.95)
+
+[node name="DamLog_13" type="Node3D" parent="LogDamContainer" unique_id=743538541 instance=ExtResource("5_id2qn")]
+transform = Transform3D(1.0472273, 0, 0.07625586, 0, 1.05, 0, -0.07625586, 0, 1.0472273, -0.47, -0.43, 3.95)
+
+[node name="DamLog_14" type="Node3D" parent="LogDamContainer" unique_id=1158957087 instance=ExtResource("6_6doa4")]
+transform = Transform3D(1.0443687, 0, 0.10859901, 0, 1.05, 0, -0.10859901, 0, 1.0443687, -0.22, -0.43, 3.95)

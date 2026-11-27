@@ -1,0 +1,435 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1"]
+
+[sub_resource type="Gradient" id="Gradient_scrim"]
+offsets = PackedFloat32Array(0, 0.56, 1)
+colors = PackedColorArray(0.04, 0.09, 0.16, 0.62, 0.04, 0.09, 0.16, 0, 0.04, 0.09, 0.16, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_scrim"]
+gradient = SubResource("Gradient_scrim")
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_accent"]
+colors = PackedColorArray(0.48, 0.86, 1, 0.95, 0.48, 0.86, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_accent"]
+gradient = SubResource("Gradient_accent")
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_normal"]
+content_margin_left = 48.0
+content_margin_right = 18.0
+bg_color = Color(0.96, 0.99, 1, 0.95)
+border_width_bottom = 3
+border_color = Color(0.42, 0.82, 1, 0.92)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.24, 0.68, 0.96, 0.28)
+shadow_size = 12
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_hover"]
+content_margin_left = 48.0
+content_margin_right = 18.0
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 3
+border_color = Color(0.32, 0.78, 1, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.32, 0.78, 1, 0.36)
+shadow_size = 14
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_pressed"]
+content_margin_left = 48.0
+content_margin_right = 18.0
+bg_color = Color(0.87, 0.94, 0.99, 0.97)
+border_width_bottom = 2
+border_color = Color(0.32, 0.78, 1, 0.9)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sec_normal"]
+content_margin_left = 46.0
+content_margin_right = 16.0
+bg_color = Color(0.06, 0.13, 0.23, 0.44)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.74, 0.91, 1, 0.26)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sec_hover"]
+content_margin_left = 46.0
+content_margin_right = 16.0
+bg_color = Color(0.11, 0.22, 0.36, 0.70)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.90, 1, 0.65)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sec_pressed"]
+content_margin_left = 46.0
+content_margin_right = 16.0
+bg_color = Color(0.05, 0.11, 0.20, 0.80)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.90, 1, 0.75)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ice_pill"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.06, 0.12, 0.21, 0.42)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.90, 1, 0.26)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hint_pill"]
+content_margin_left = 14.0
+content_margin_top = 6.0
+content_margin_right = 14.0
+content_margin_bottom = 6.0
+bg_color = Color(0.05, 0.10, 0.18, 0.28)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toast_pill"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.10, 0.14, 0.22, 0.62)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.84, 0.34, 0.72)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="MainMenu" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LeftScrim" type="TextureRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_scrim")
+expand_mode = 1
+
+[node name="SnowOverlay" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuColumn" type="VBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -220.0
+offset_right = 420.0
+offset_bottom = 220.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="BrandRow" type="HBoxContainer" parent="Root/MenuColumn"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 0
+
+[node name="EmblemIcon" type="Control" parent="Root/MenuColumn/BrandRow"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SubtitleLabel" type="Label" parent="Root/MenuColumn/BrandRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.72, 0.90, 1, 0.90)
+theme_override_font_sizes/font_size = 13
+text = "ICE FISHING TYCOON  •  DEMO"
+vertical_alignment = 1
+
+[node name="TitleBox" type="VBoxContainer" parent="Root/MenuColumn"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -6
+
+[node name="TitleTop" type="Label" parent="Root/MenuColumn/TitleBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.98, 0.99, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.06, 0.12, 0.38)
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 50
+text = "ЛЕДЯНАЯ"
+
+[node name="TitleBottom" type="Label" parent="Root/MenuColumn/TitleBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.58, 0.88, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.06, 0.12, 0.38)
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 50
+text = "РЫБАЛКА"
+
+[node name="AccentBar" type="TextureRect" parent="Root/MenuColumn"]
+custom_minimum_size = Vector2(150, 3)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_accent")
+expand_mode = 1
+
+[node name="Spacer" type="Control" parent="Root/MenuColumn"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ButtonsBox" type="VBoxContainer" parent="Root/MenuColumn"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="PlayButton" type="Button" parent="Root/MenuColumn/ButtonsBox"]
+custom_minimum_size = Vector2(256, 54)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.07, 0.13, 0.21, 1)
+theme_override_colors/font_hover_color = Color(0.04, 0.09, 0.16, 1)
+theme_override_colors/font_pressed_color = Color(0.04, 0.09, 0.16, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_primary_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_primary_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_primary_pressed")
+text = "Играть"
+alignment = 0
+
+[node name="Icon" type="Control" parent="Root/MenuColumn/ButtonsBox/PlayButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -10.0
+offset_right = 38.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RestartButton" type="Button" parent="Root/MenuColumn/ButtonsBox"]
+visible = false
+custom_minimum_size = Vector2(256, 44)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 0.96)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_sec_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sec_pressed")
+text = "Заново"
+alignment = 0
+
+[node name="Icon" type="Control" parent="Root/MenuColumn/ButtonsBox/RestartButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -10.0
+offset_right = 36.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SoundButton" type="Button" parent="Root/MenuColumn/ButtonsBox"]
+custom_minimum_size = Vector2(256, 44)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 0.96)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_sec_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sec_pressed")
+text = "Звук: Вкл"
+alignment = 0
+
+[node name="Icon" type="Control" parent="Root/MenuColumn/ButtonsBox/SoundButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -10.0
+offset_right = 36.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="QuitButton" type="Button" parent="Root/MenuColumn/ButtonsBox"]
+custom_minimum_size = Vector2(256, 44)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.95, 0.98, 1, 0.96)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_sec_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sec_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sec_pressed")
+text = "Выход"
+alignment = 0
+
+[node name="Icon" type="Control" parent="Root/MenuColumn/ButtonsBox/QuitButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -10.0
+offset_right = 36.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IceCounterPill" type="PanelContainer" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 62.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ice_pill")
+
+[node name="Row" type="HBoxContainer" parent="Root/IceCounterPill"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Icon" type="Control" parent="Root/IceCounterPill/Row"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CountLabel" type="Label" parent="Root/IceCounterPill/Row"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.96, 0.99, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "0"
+vertical_alignment = 1
+
+[node name="EasterEggToast" type="PanelContainer" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -450.0
+offset_top = 72.0
+offset_right = -24.0
+offset_bottom = 110.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_toast_pill")
+
+[node name="ToastLabel" type="Label" parent="Root/EasterEggToast"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.93, 0.62, 1)
+theme_override_font_sizes/font_size = 14
+text = "★ Ребята из Южного Парка вышли на берег!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomHintPill" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -52.0
+offset_right = 560.0
+offset_bottom = -20.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hint_pill")
+
+[node name="ControlsHint" type="Label" parent="Root/BottomHintPill"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.88, 0.94, 1, 0.72)
+theme_override_font_sizes/font_size = 12
+text = "Клик по льдинам — разбить   •   WASD / ЛКМ — движение   •   F11 — полный экран"
+vertical_alignment = 1

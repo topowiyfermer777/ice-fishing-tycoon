@@ -1,0 +1,14 @@
+# Godot 4 generated cache & temp files
+.godot/
+.import/
+*.tmp
+*.log
+
+# Word reports (excluded per repository settings)
+*.docx
+
+# Video files (gameplay video is attached to GitHub Release v1.0-demo)
+*.mp4
+
+# Stray unused uid
+test_smoke.gd.uid
